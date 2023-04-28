@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+##metadata contains the labels spec contains selectors
+metadata:
+  name: $PROJECT_NAME
+  labels:
+    app: $PROJECT_NAME
+##specification for deployment(desired not the status status inside etcd)
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: $PROJECT_NAME
+  ##spec for pod( the spec that i want (desired))
+  template:
+    metadata:
+      labels:
+        app : $PROJECT_NAME
+    spec:
+      imagePullSecrets:
+        - name : docker-registry-key
+      containers:
+      - name : $PROJECT_NAME
+        image: $DOCKER_IMAGE_NAME:$IMAGE_TAG
+        imagePullPolicy: Always
+        ports:  
+        - containerPort: 80
+        env: 
+        - name: REACT_APP_USER_SERVER
+          value: "194-195-247-34.ip.linodeusercontent.com"
+        - name: REACT_APP_AUCTION_SERVER
+          value: "194-195-247-34.ip.linodeusercontent.com"
+        - name: REACT_APP_BID_SERVER
+          value: "194-195-247-34.ip.linodeusercontent.com"
+        - name: REACT_APP_CLIENT
+          value: "194-195-247-34.ip.linodeusercontent.com"
+        - name: REACT_APP_CLIENT_PORT
+          value: "80"

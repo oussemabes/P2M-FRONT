@@ -13,7 +13,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'oussemabes/frontappimage'
         PROJECT_NAME = 'clientservice'
         REPO_SERVER = '739761511001.dkr.ecr.eu-central-1.amazonaws.com'
-        ECR_REGISTRY = '739761511001.dkr.ecr.eu-central-1.amazonaws.com/ecr-mahdi'
+        ECR_REGISTRY = '739761511001.dkr.ecr.eu-central-1.amazonaws.com/ecr-besbes'
         APP_URL = '194-195-247-34.ip.linodeusercontent.com'
         AWS_REGION = 'eu-central-1'
     }

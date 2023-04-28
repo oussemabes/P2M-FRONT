@@ -10,7 +10,7 @@ pipeline {
     environment {
         SERVER_ADDRESS = '3.123.129.244'
         SERVER_USERNAME = 'ec2-user'
-        DOCKER_IMAGE_NAME = 'mahdiboudaouara/reactappimage'
+        DOCKER_IMAGE_NAME = 'oussemabes/reactappimage'
         PROJECT_NAME = 'clientservice'
         REPO_SERVER = '739761511001.dkr.ecr.eu-central-1.amazonaws.com'
         ECR_REGISTRY = '739761511001.dkr.ecr.eu-central-1.amazonaws.com/ecr-mahdi'
